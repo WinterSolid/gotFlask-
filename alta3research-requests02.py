@@ -8,27 +8,11 @@ URL= "http://127.0.0.1:2224/"
 new_char= {
         "name": "Arya Stark",
 	"gender": "Female",
-	"aliases": [
-    		        "Arya Horseface",
-                        "Arya Underfoot",
-                        "Arry",
-                        "Lumpyface",
-                        "Lumpyhead",
-                        "Stickboy",
-                        "Weasel",
-                        "Nymeria",
-                        "Squan",
-                        "Saltb",
-                        "Cat of the Canaly",
-                        "Bets",
-                        "The Blind Girh",
-                        "The Ugly Little Girl",
-                        "Mercedenl",
-                        "Mercye"
-	        ],
-	"allegiances": [
-		        "https://www.anapioficeandfire.com/api/houses/362"
-                ]
+	"aliases": ["Arya Horseface","Arya Underfoot","Arry","Lumpyface",
+                "Lumpyhead","Stickboy","Weasel","Nymeria","Squan","Saltb",
+                "Cat of the Canaly","Bets","The Blind Girh",
+                "The Ugly Little Girl","Mercedenl","Mercye"],
+	"allegiances": ["https://www.anapioficeandfire.com/api/houses/362"]
         }
 
 # json.dumps converts python object --> JSON string

@@ -7,7 +7,7 @@ import json
 app= Flask(__name__)
 app.secret_key = "Winteriscoming"
 
-gotdata= [{
+got_data= [{
 	"name": "Jon Snow",
 	"gender": "Male",
 	"aliases": ["Lord Snow","Ned Stark's Bastard","The Snow of Winterfell",
@@ -18,14 +18,14 @@ gotdata= [{
 
 @app.route("/")
 def req():
-	return jsonify(gotdata)
+	return jsonify(got_data)
 
-@app.route("/protected/<name>")
+@app.route("/<name>")
 def session_option(name):
 	session["username"] = name
 
 	if session["username"] == "Winteriscoming":
-		return (jsonify(gotdata))
+		return (jsonify(got_data))
 	else: 
 		return "Only kings of the North may enter!"		
 # get/post to data then append data
@@ -40,9 +40,9 @@ def index():
            gender = data["gender"]
            aliases = data["aliases"]
            allegiances = data["allegiances"]
-           gotdata.append({"name":name,"gender":gender,"aliases":aliases,"allegiances":allegiances})
+           got_data.append({"name":name,"gender":gender,"aliases":aliases,"allegiances":allegiances})
 	# filters data through jsonify
-    return jsonify(gotdata)
+    return jsonify(got_data)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=2224)
