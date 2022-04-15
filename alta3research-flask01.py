@@ -1,11 +1,13 @@
 from flask import Flask
 from flask import request
 from flask import jsonify
-from flask import sessions
+from flask import Flask
+from flask import session
+from flask import request
 import json
 
 app= Flask(__name__)
-app.secret_key = "Winteriscoming"
+app.secret_key = "winteriscoming"
 
 got_data= [{
 	"name": "Jon Snow",
@@ -13,7 +15,7 @@ got_data= [{
 	"aliases": ["Lord Snow","Ned Stark's Bastard","The Snow of Winterfell",
 				"The Crow-Come-Over","The 998th Lord Commander of the Night's Watch",
 				"The Bastard of Winterfell","The Black Bastard of the Wall","Lord Crow"],
-	"allegiances": ["https://anapioficeandfire.com/api/houses/362"]
+	"allegiances": "https://anapioficeandfire.com/api/houses/362"
     }]
 
 @app.route("/")
@@ -24,7 +26,7 @@ def req():
 def session_option(name):
 	session["username"] = name
 
-	if session["username"] == "Winteriscoming":
+	if session["username"] == "winteriscoming":
 		return (jsonify(got_data))
 	else: 
 		return "Only kings of the North may enter!"		

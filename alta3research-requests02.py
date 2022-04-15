@@ -12,7 +12,7 @@ new_char= {
                 "Lumpyhead","Stickboy","Weasel","Nymeria","Squan","Saltb",
                 "Cat of the Canaly","Bets","The Blind Girh",
                 "The Ugly Little Girl","Mercedenl","Mercye"],
-	"allegiances": ["https://www.anapioficeandfire.com/api/houses/362"]
+	"allegiances": "https://www.anapioficeandfire.com/api/houses/362"
         }
 
 # json.dumps converts python object --> JSON string
