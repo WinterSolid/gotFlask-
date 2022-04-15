@@ -1,13 +1,13 @@
 from flask import Flask
 from flask import request
-from flask import redirect
 from flask import jsonify
 from flask import sessions
+import json
 
 app= Flask(__name__)
 app.secret_key = "Winteriscoming"
 
-gotdata= {
+gotdata= [{
 	"name": "Jon Snow",
 	"gender": "Male",
 	"aliases": [
@@ -23,7 +23,8 @@ gotdata= {
 	"allegiances": [
 		"https://anapioficeandfire.com/api/houses/362"
 	]
-    }
+    }]
+
 @app.route("/protected/<name>")
 def session_option(name):
 	session["username"] = name
@@ -33,6 +34,7 @@ def session_option(name):
 	else: 
 		return "Only kings of the North may enter!"		
 # get/post to data then append data
+
 @app.route("/", methods=["GET","POST"])
 def index():
     if request.method == 'POST':
