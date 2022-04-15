@@ -4,6 +4,7 @@ from flask import jsonify
 from flask import Flask
 from flask import session
 from flask import request
+from flask import url_for
 import json
 
 app= Flask(__name__)
@@ -43,8 +44,15 @@ def index():
            aliases = data["aliases"]
            allegiances = data["allegiances"]
            got_data.append({"name":name,"gender":gender,"aliases":aliases,"allegiances":allegiances})
-	# filters data through jsonify
+	# filters data through jsonify 
+	# **note returns by keys - alphabetically
     return jsonify(got_data)
+
+@app.route("/logout")
+def logout():
+   # remove the username from the session  *
+   session.pop("username", None)
+   return redirect(url_for("index"))	
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=2224)
