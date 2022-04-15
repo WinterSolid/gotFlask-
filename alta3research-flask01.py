@@ -10,20 +10,15 @@ app.secret_key = "Winteriscoming"
 gotdata= [{
 	"name": "Jon Snow",
 	"gender": "Male",
-	"aliases": [
-		"Lord Snow",
-		"Ned Stark's Bastard",
-		"The Snow of Winterfell",
-		"The Crow-Come-Over",
-		"The 998th Lord Commander of the Night's Watch",
-		"The Bastard of Winterfell",
-		"The Black Bastard of the Wall",
-		"Lord Crow"
-	],
-	"allegiances": [
-		"https://anapioficeandfire.com/api/houses/362"
-	]
+	"aliases": ["Lord Snow","Ned Stark's Bastard","The Snow of Winterfell",
+				"The Crow-Come-Over","The 998th Lord Commander of the Night's Watch",
+				"The Bastard of Winterfell","The Black Bastard of the Wall","Lord Crow"],
+	"allegiances": ["https://anapioficeandfire.com/api/houses/362"]
     }]
+
+@app.route("/")
+def req():
+	return jsonify(gotdata)
 
 @app.route("/protected/<name>")
 def session_option(name):
